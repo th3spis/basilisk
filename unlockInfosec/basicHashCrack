@@ -1,0 +1,19 @@
+import itertools
+
+def simple_hash(s):
+    r = 7
+    for c in s:
+        r = (r * 31 + ord(c)) % 2**16
+    return r
+
+
+def crack(s):
+    hasheo = simple_hash(s)
+    
+    for item in itertools.product('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890', repeat=3):
+        if simple_hash(item)  == hasheo:
+            print('Found ' + ''.join(item) )
+            return ''.join(item)
+        
+    
+crack("house")
