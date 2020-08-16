@@ -10,6 +10,8 @@ def simple_hash(s):
 def crack(s):
     hasheo = simple_hash(s)
     
+    #Product() is used instead of a dictionary bc this is implemented for educational purposes
+    
     for item in itertools.product('qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890', repeat=3):
         if simple_hash(item)  == hasheo:
             print('Found ' + ''.join(item) )
