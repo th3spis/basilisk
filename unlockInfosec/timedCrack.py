@@ -1,6 +1,5 @@
 import time
-import sys # ignore
-sys.path.insert(0,'.') # ignore
+import sys 
 from Root.pswd import real_password
 
 def check_password(password): # Don't change it
