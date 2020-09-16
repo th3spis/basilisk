@@ -3,7 +3,7 @@ from scapy.layers.http import *
 import sys # ignore
 sys.path.insert(0,'.') # ignore
 
-#### Don't change the code until this line ####
+#### USEFUL https://thepacketgeek.com/scapy/building-network-tools/part-04/
 
 def show_mac_address():
     packets = rdpcap(pcapPath.pcap)
