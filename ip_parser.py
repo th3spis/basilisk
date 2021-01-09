@@ -23,7 +23,6 @@ def parse_ips(argumensio):
 		else:
 			for ip in t.hosts():
 				listoncio.append(ip)
-			#print(t.hosts().exploded)
 	except Exception as e:
 		print(e)
 
@@ -31,7 +30,9 @@ for arg in sys.argv[1:]:
 	parse_ips(arg)
 
 print("Final list: ")
-print(listoncio)
+
+for i in listoncio:
+	print(i.exploded)
 
 
 """
