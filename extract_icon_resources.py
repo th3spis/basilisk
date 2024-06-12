@@ -35,7 +35,6 @@ for entry in rt_icon_directory.directory.entries:
   size = entry.directory.entries[0].data.struct.Size
   obj = entry.directory.entries[0].data.struct
   
-  print("")
   # Retrieve the actual data and start processing the icons
   #
   data = pe.get_memory_mapped_image()[data_rva:data_rva+size]
@@ -61,11 +60,8 @@ for entry in rt_icon_directory.directory.entries:
     + data[14].to_bytes(1, byteorder='big') + data[15].to_bytes(1, byteorder='big') \
     + struct.pack('<i', size) \
     + b"\x16\x00\x00\x00"
-
-  print(data[20].to_bytes(1, byteorder='big') +  data[21].to_bytes(1, byteorder='big') + data[22].to_bytes(1, byteorder='big') + data[23].to_bytes(1, byteorder='big'))
   
   data = header + data
-
 
 
   fname = "fileico"+ str(i) + ".ico"
